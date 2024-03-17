@@ -52,7 +52,7 @@ def fetch_and_parse_conversation(url):
                 for message in formatted_conversation:
                     f.write(json.dumps(message, ensure_ascii=False) + "\n")
 
-            return formatted_conversation, "./" + filename
+            return "./" + filename, formatted_conversation
 
     else:
         print("Failed to retrieve the content")
