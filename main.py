@@ -47,13 +47,17 @@ def fetch_and_parse_conversation(url):
                         ],
                     }
                 )
-
-            with open(f"{title}.jsonl", "w", encoding="UTF-8") as f:
+            filename = f"{title}.jsonl"
+            with open(filename, "w", encoding="UTF-8") as f:
                 for message in formatted_conversation:
                     f.write(json.dumps(message, ensure_ascii=False) + "\n")
 
+            return formatted_conversation, "./" + filename
+
     else:
         print("Failed to retrieve the content")
+
+    return None
 
 
 if __name__ == "__main__":
