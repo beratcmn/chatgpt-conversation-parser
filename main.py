@@ -57,6 +57,8 @@ def fetch_and_parse_conversation(url):
 
 
 if __name__ == "__main__":
-    fetch_and_parse_conversation(
-        "https://chat.openai.com/share/c99f8926-c38b-4e37-a61f-3d6dae649cff"
-    )
+    url = input("Enter the URL of the conversation to fetch: ")
+    if url:
+        fetch_and_parse_conversation(url)
+    else:
+        print("URL is required")
