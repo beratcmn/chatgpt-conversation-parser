@@ -42,6 +42,9 @@ def fetch_and_parse_conversation(url):
                         "id": message["id"],
                         "role": message["message"]["author"]["role"],
                         "text": message["message"]["content"]["parts"][0],
+                        "model": data["props"]["pageProps"]["serverResponse"]["data"][
+                            "model"
+                        ],
                     }
                 )
 
